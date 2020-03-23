@@ -6,6 +6,8 @@ const cors = require('cors');
 const passport = require("passport");
 const users =require('./routes/users');
 const path =require('path')
+
+
 app.use(
   bodyParser.urlencoded({
     extended: false
@@ -35,12 +37,18 @@ require("./config/passport")(passport);
 // Routes
 
 const listRouter = require('./routes/list.route');
-app.use('/', listRouter);
-app.use("/", users);
+// app.use('/', listRouter);
+// app.use("/", users);
+
+app.use('/list', listRouter);
+app.use("/auth", users);
+app.use('/', express.static(path.join(__dirname, '/client/build')));
+
+
+// app.use('/', express.static(path.join(__dirname, '/client/build')));
 
 if(process.env.NODE_ENV==='production'){
   const path=require('path')
-  app.use('/', express.static(path.join(__dirname, '/client/build')));
   app.get('*',(req,res)=>{
 res.sendFile(path.resolve(_dirname,'client','build','index.html'))
   })
