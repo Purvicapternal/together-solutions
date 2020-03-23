@@ -1,0 +1,56 @@
+
+{
+    "response": [
+        {
+            "id": 456,
+            "skill": "C",
+            "client": "shelly",
+            "date": "03-03-1999",
+            "name": "Noida",
+            "mobile": "7062505943",
+            "email": "hikha@gmail.com",
+            "location": "A",
+            "experience": "7062505943",
+            "current": "7062505943",
+            "expected": "7062505943",
+            "notice": "7062505943",
+            "status1": "7062505943",
+            "status2": "7062505943"
+
+
+        },
+        {
+            "id": 455,
+            "skill": "C",
+            "client": "shelly",
+            "date": "03-03-1999",
+            "name": "Noida",
+            "mobile": "7062505943",
+            "email": "hikha@gmail.com",
+            "location": "A",
+            "experience": "7062505943",
+            "current": "7062505943",
+            "expected": "7062505943",
+            "notice": "7062505943",
+            "status1": "7062505943",
+            "status2": "7062505943"
+        },
+        {
+            "id": 454,
+            "skill": "C",
+            "client": "shelly",
+            "date": "03-03-1999",
+            "name": "Noida",
+            "mobile": "7062505943",
+            "email": "hikha@gmail.com",
+            "location": "A",
+            "experience": "7062505943",
+            "current": "7062505943",
+            "expected": "7062505943",
+            "notice": "7062505943",
+            "status1": "7062505943",
+            "status2": "7062505943"
+        }
+        
+    ]
+}
