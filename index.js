@@ -20,7 +20,6 @@ const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
-
 mongoose.connect(
   process.env.MONGODB_URI ||db,
     { useNewUrlParser: true, useCreateIndex: true,useUnifiedTopology: true }
@@ -41,7 +40,7 @@ const listRouter = require('./routes/list.route');
 // app.use("/", users);
 
 app.use('/list', listRouter);
-app.use("/auth", users);
+app.use("/user", users);
 app.use('/', express.static(path.join(__dirname, '/client/build')));
 
 

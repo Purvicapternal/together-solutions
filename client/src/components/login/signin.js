@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react'
 import Image from "../../images.png";
 import "./style.scss";
 import { withRouter } from "react-router-dom";
@@ -7,15 +7,14 @@ import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import classnames from "classnames";
 
-
- class Signin extends React.Component {
+ class Signin extends Component {
   constructor(props) {
     super(props);
     this.state={
         name:"",
         email:"",
         password:"",
-        errors:{}
+        errors:{},
     }
     this.handlechange=this.handlechange.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
@@ -25,7 +24,7 @@ import classnames from "classnames";
     // If logged in and user navigates to Register page, should redirect them to dashboard
     
           if (this.props.auth.isAuthenticated) {
-            this.props.history.push("/list");
+            this.props.history.push("/profile");
 
           }
    
@@ -47,7 +46,6 @@ import classnames from "classnames";
 }
 
 handleSubmit(e){
-  e.preventDefault();
   const newUser = {
     name: this.state.name,
     email: this.state.email,

@@ -6,6 +6,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./action/listaction";
 import home from "./components/login/home";
 import list from "./components/list";
+import Profile from "./components/profile";
 import add from "./components/add";
 import edit from "./components/edit";
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -33,7 +34,7 @@ class App extends Component {
 	render() {
 		return (
 				<div className="app-content content">
-					<div className="content-wrapper">
+					<div className="content-wrapper" >
 
 					<Route exact path={'/'} component={home} /> 
 
@@ -41,6 +42,7 @@ class App extends Component {
 							{/* <Route exact path={'/list'} component={list} /> 
 							<Route exact path={'/add'} component={add} />
 							<Route exact path={'/edit'} component={edit} />*/}
+				        	<PrivateRoute exact path="/profile" component={Profile} />
 							<PrivateRoute exact path="/list" component={list} />
 							<PrivateRoute exact path="/add" component={add} />
 							<PrivateRoute exact path="/edit" component={edit} />
@@ -48,7 +50,7 @@ class App extends Component {
 
 						</Switch>
 
-
+						
 					</div>
 				</div>
 

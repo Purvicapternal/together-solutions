@@ -24,13 +24,13 @@ class Login extends Component {
       componentDidMount() {
         // If logged in and user navigates to Login page, should redirect them to dashboard
         if (this.props.auth.isAuthenticated) {
-          this.props.history.push("/list");
+          this.props.history.push("/profile");
         }
       }
     
       componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
-          this.props.history.push("/list"); // push user to dashboard when they login
+          this.props.history.push("/profile"); // push user to dashboard when they login
         }
     if (nextProps.errors) {
           this.setState({
@@ -58,7 +58,7 @@ class Login extends Component {
       const { errors } = this.state;
 
         return (
-            <div className="base-container" ref={this.props.containerRef}>
+            <div className="base-container"  ref={this.props.containerRef}>
             <div className="header">Login</div>
             <div className="content">
               <div className="image">
