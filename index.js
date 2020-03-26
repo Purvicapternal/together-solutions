@@ -40,7 +40,7 @@ const listRouter = require('./routes/list.route');
 // app.use("/", users);
 
 app.use('/list', listRouter);
-app.use("/user", users);
+app.use("/auth", users);
 app.use('/', express.static(path.join(__dirname, '/client/build')));
 
 
