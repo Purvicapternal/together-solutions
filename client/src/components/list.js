@@ -43,7 +43,7 @@ var parent = null;
     
     componentDidMount(){
   
-    axios.get('http://localhost:5000/',{})
+    axios.get('http://localhost:8080/list/',{})
     .then((res)=>{
         this.setState({
             list:res.data,
@@ -64,7 +64,7 @@ var parent = null;
 
     handledelete(id){
           
-        axios.delete('http://localhost:5000/delete/'+id)
+        axios.delete('http://localhost:8080/list/delete/'+id)
         .then(res=>console.log(res.data))
         .catch(err=>console.log(err))
 
@@ -95,9 +95,10 @@ var parent = null;
       status2:status2
     });
 }
+
   
     render() {
-      
+        
         return (
         
             <Card variant="outlined">
@@ -115,7 +116,6 @@ var parent = null;
                         <br></br>
                     </Card>
                     <Paper >
-                    <Button variant="contained" color="primary"  onClick={()=>this.props.history.push('/add') } style={{ float: " right" }}>ADD NEW </Button>
                      <br></br>
                         <Table >
                             <TableHead>
@@ -162,7 +162,6 @@ var parent = null;
                                                     <div className="row">
                                                         <Fab color="secondary" size="small" aria-label="edit" >
                                                             <Edit 
-                                                          //  onClick={()=>this.handleSubmit("/edit",row.skill,row.client,row.date,row.name,row.mobile,row.email,row.location,row.experience,row.current,row.expected,row.notice,row.status1,row.status2)}
                                                           onClick={()=>this.handleSubmit("/edit",row._id,row.skill,row.client,row.date,row.name,row.mobile,row.email,row.location,row.experience,row.current,row.expected,row.notice,row.status1,row.status2)}
 
                                                           />
@@ -181,10 +180,11 @@ var parent = null;
                                 }
                             </TableBody>
                         </Table>
-
+                        <br></br><br></br>
+                        <Button variant="contained" size="large"  color="primary"  onClick={()=>this.props.history.push('/add') } >ADD NEW </Button>
+                        <br></br>
+                        <br></br>
                     </Paper>
-
-
                 </Paper>
 
             </Card>

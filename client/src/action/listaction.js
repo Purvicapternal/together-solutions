@@ -9,12 +9,12 @@ import jwt_decode from "jwt-decode";
 
 export const postlist = (jobdata,history) =>dispatch =>   {
   axios
-  .post("http://localhost:5000/add", jobdata)
+  .post("http://localhost:8080/list/add", jobdata)
   .then(res => history.push("/list"))
    
 };
 export const editlist = (jobs,id,history) =>dispatch =>   {
-  axios.post('http://localhost:5000/update/'+id, jobs)
+  axios.post('http://localhost:8080/list/update/'+id, jobs)
   .then(res => history.push("/list"))
    
 };
@@ -43,19 +43,19 @@ export const deleteAction = (id)=>{
 
 export const registerUser = (userData, history) => dispatch => {
     axios
-      .post("http://localhost:5000/register", userData)
+      .post("http://localhost:8080/auth/register", userData)
       .then(res => history.push("/")) // re-direct to login on successful register
       .catch(err =>
         dispatch({
           type: GET_ERRORS,
           payload: err.response.data
-        })
+        })  
       );
   };
   // Login - get user token
   export const loginUser = userData => dispatch => {
     axios
-      .post("http://localhost:5000/login", userData)
+      .post("http://localhost:8080/auth/login", userData)
       .then(res => {
         // Save to localStorage
   // Set token to localStorage
